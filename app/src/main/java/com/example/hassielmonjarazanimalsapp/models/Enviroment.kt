@@ -1,6 +1,6 @@
 package com.example.hassielmonjarazanimalsapp.models
 
-data class AnimalsItem(
+data class Enviroment(
     val description: String,
     val environmentId: String,
     val facts: List<String>,
