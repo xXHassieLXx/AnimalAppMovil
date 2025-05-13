@@ -29,6 +29,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,6 +38,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.hassielmonjarazanimalsapp.models.Animals
+import com.example.hassielmonjarazanimalsapp.services.AnimalsService
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -50,7 +53,7 @@ fun ListaAnimales(
     var BASE_URL = "https://animals.juanfrausto.com/api/"
     val scope = rememberCoroutineScope()
     var animals by remember {
-        mutableStateOf(listOf<Animal>())
+        mutableStateOf(listOf<Animals>())
     }
     var isLoading by remember {
         mutableStateOf(true)
@@ -63,7 +66,7 @@ fun ListaAnimales(
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
-                val animalService = retrofitBuilder.create(AnimalService::class.java)
+                val animalService = retrofitBuilder.create(AnimalsService::class.java)
                 val result = animalService.getAnimals()
                 animals = result
                 isLoading = false
