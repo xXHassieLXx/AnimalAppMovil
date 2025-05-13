@@ -50,6 +50,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.hassielmonjarazanimalsapp.components.ListaAmbientesItem
+import com.example.hassielmonjarazanimalsapp.models.Ambientes
 import com.example.hassielmonjarazanimalsapp.services.AnimalsService
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
@@ -58,14 +60,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 @Composable
-fun EnvironmentListScreen(
+fun ListaAmbientes(
     innerPadding : PaddingValues,
     navController : NavController
 ) {
     var BASE_URL = "https://animals.juanfrausto.com/api/"
     val scope = rememberCoroutineScope()
     var environments by remember {
-        mutableStateOf(listOf<Environment>())
+        mutableStateOf(listOf<Ambientes>())
     }
     var isLoading by remember {
         mutableStateOf(true)
@@ -139,3 +141,5 @@ fun EnvironmentListScreen(
         }
     }
 }
+
+

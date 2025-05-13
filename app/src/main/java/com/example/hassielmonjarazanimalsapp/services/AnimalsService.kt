@@ -1,6 +1,7 @@
 package com.example.hassielmonjarazanimalsapp.services
 
 import android.os.Environment
+import com.example.hassielmonjarazanimalsapp.models.Ambientes
 import com.example.hassielmonjarazanimalsapp.models.Animals
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -20,8 +21,8 @@ interface AnimalsService {
     ) : List<Animals>
 
     @GET("environments")
-    suspend fun getEnvironments(): List<Environment>
+    suspend fun getEnvironments(): List<Ambientes>
 
     @GET("environments/{id}")
-    suspend fun getEnvironmentById ( @Path("id") id: String) : Environment
+    suspend fun getEnvironmentById ( @Path("id") id: String) : Ambientes
 }

@@ -1,5 +1,6 @@
 package com.example.hassielmonjarazanimalsapp
 
+import DetalleAmbientes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -44,6 +45,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.hassielmonjarazanimalsapp.screens.ListaAnimales
+import com.example.hassielmonjarazanimalsapp.screens.DetalleAnimales
+import com.example.hassielmonjarazanimalsapp.screens.ListaAmbientes
 import com.example.hassielmonjarazanimalsapp.ui.theme.HassielMonjarazAnimalsAppTheme
 
 
@@ -59,7 +62,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 Scaffold(
                     modifier = Modifier.fillMaxSize()
-                        .background(Color(0xFF0C3611)),
+                        .background(Color(0x186a3b)),
                     contentColor = Color.Transparent,
                     containerColor = Color.Transparent,
                     bottomBar = {
@@ -86,7 +89,7 @@ class MainActivity : ComponentActivity() {
                                             verticalAlignment = Alignment.CenterVertically
                                         ) {
                                             Image(
-                                                painter = painterResource(id = R.drawable.pets_24dp_e3e3e3_fill0_wght400_grad0_opsz24),
+                                                painter = painterResource(id = R.drawable.ggg),
                                                 contentDescription = "Animals",
                                                 modifier = Modifier.padding(end = 8.dp).size(32.dp),
                                                 colorFilter = ColorFilter.tint(Color.Black)
@@ -113,7 +116,7 @@ class MainActivity : ComponentActivity() {
                                             verticalAlignment = Alignment.CenterVertically
                                         ) {
                                             Image(
-                                                painter = painterResource(id = R.drawable.environmentnav),
+                                                painter = painterResource(id = R.drawable.ambientenav),
                                                 contentDescription = "Environments",
                                                 modifier = Modifier.padding(end = 8.dp).size(32.dp),
                                                 colorFilter = ColorFilter.tint(Color.Black)
@@ -153,13 +156,13 @@ class MainActivity : ComponentActivity() {
                             )
                         ) {
                             val animalId = it.arguments?.getString("animalId") ?: ""
-                            ListaAnimalesItem(
+                            DetalleAnimales(
                                 innerPadding = innerPadding,
                                 animalId = animalId
                             )
                         }
                         composable(route = "environment-list") {
-                            ListaAmbiemtes(
+                            ListaAmbientes(
                                 innerPadding = innerPadding, navController = navController
                             )
                         }
@@ -173,7 +176,7 @@ class MainActivity : ComponentActivity() {
                             )
                         ) {
                             val environmentId = it.arguments?.getString("environmentId") ?: ""
-                            ListaAmbientesItem(
+                            DetalleAmbientes(
                                 innerPadding = innerPadding,
                                 environmentId = environmentId,
                                 navController = navController

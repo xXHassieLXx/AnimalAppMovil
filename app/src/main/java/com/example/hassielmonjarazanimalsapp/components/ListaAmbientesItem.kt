@@ -1,6 +1,5 @@
 package com.example.hassielmonjarazanimalsapp.components
 
-import android.os.Environment
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -17,12 +16,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
+import com.example.hassielmonjarazanimalsapp.models.Ambientes
 
 
 @Composable
-fun EnvironmentCard(
-    environment : Environment,
-    onClick : (Environment) -> Unit = {}
+fun ListaAmbientesItem(
+    environment : Ambientes,
+    onClick : (Ambientes) -> Unit = {}
 ) {
     Column (
         horizontalAlignment = Alignment.CenterHorizontally,

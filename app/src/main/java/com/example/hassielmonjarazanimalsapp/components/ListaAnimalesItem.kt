@@ -19,7 +19,7 @@ import com.example.hassielmonjarazanimalsapp.models.Animals
 
 
 @Composable
-fun AnimalCard(
+fun ListaAnimalesItem(
     animal : Animals,
     onClick : (Animals) -> Unit = {}
 ) {

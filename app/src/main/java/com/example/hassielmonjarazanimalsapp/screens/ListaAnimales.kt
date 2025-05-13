@@ -38,6 +38,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.hassielmonjarazanimalsapp.components.ListaAnimalesItem
 import com.example.hassielmonjarazanimalsapp.models.Animals
 import com.example.hassielmonjarazanimalsapp.services.AnimalsService
 import kotlinx.coroutines.launch
@@ -144,7 +145,7 @@ fun ListaAnimales(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 animals.forEach { animal ->
-                    ListaAnimales(
+                    ListaAnimalesItem(
                         animal = animal,
                     ) { animalRegresado ->
                         Log.i("AnimalEspecifico", animalRegresado.toString())
