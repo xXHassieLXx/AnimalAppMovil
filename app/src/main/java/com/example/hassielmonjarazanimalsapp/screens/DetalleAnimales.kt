@@ -92,7 +92,7 @@ fun DetalleAnimales(
                     .fillMaxSize()
                     .padding(innerPadding)
                     .verticalScroll(rememberScrollState())
-                    .padding(horizontal = 25.dp)
+                    .padding(horizontal = 25.dp, vertical = 20.dp)
             ) {
                 Text(
                     text = animal.name,
@@ -108,7 +108,8 @@ fun DetalleAnimales(
                     contentDescription = animal.name,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .size(220.dp),
+                        .size(220.dp)
+                        .clip(RoundedCornerShape(25.dp)),
                     contentScale = ContentScale.Crop
                 )
 
@@ -121,29 +122,29 @@ fun DetalleAnimales(
                     textAlign = TextAlign.Center
                 )
 
-                Spacer(modifier = Modifier.padding(vertical = 6.dp))
+                Spacer(modifier = Modifier.padding(vertical = 14.dp))
 
                 Text(
                     text = "Hechos interesantes",
-                    color = Color(0xFFAEB044),
+                    color = Color(0xFFE8EA88),
                     fontSize = 30.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.fillMaxWidth()
                 )
 
-                Spacer(modifier = Modifier.padding(vertical = 6.dp))
+                Spacer(modifier = Modifier.padding(vertical = 10.dp))
 
                 animal.facts.forEach { fact ->
                     FactItem(text = fact)
                     Spacer(modifier = Modifier.padding(vertical = 3.dp))
                 }
 
-                Spacer(modifier = Modifier.padding(vertical = 6.dp))
+                Spacer(modifier = Modifier.padding(vertical = 14.dp))
 
                 Text(
                     text = "Galeria de imagenes",
-                    color = Color(0xFFAEB044),
+                    color = Color(0xFFE8EA88),
                     fontSize = 30.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
@@ -159,8 +160,8 @@ fun DetalleAnimales(
                     items(animal.imageGallery) { image ->
                         Box(
                             modifier = Modifier
-                                .width(350.dp)
-                                .height(300.dp)
+                                .width(300.dp)
+                                .height(250.dp)
                                 .clip(RoundedCornerShape(30.dp))
                         ) {
                             AsyncImage(

@@ -42,7 +42,8 @@ fun ListaAnimalesItem(
         Text(
             text = animal.name.substringBefore(" "),
             color = Color.White,
-            style = MaterialTheme.typography.titleLarge
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.padding(vertical = 5.dp)
         )
     }
 }

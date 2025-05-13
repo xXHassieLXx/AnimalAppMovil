@@ -134,10 +134,8 @@ fun ListaAnimales(
                 color = Color.White,
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().padding(vertical = 20.dp)
             )
-
-            Spacer(modifier = Modifier.height(24.dp))
 
             Column (
                 modifier = Modifier

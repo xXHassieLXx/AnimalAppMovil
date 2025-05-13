@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 Scaffold(
                     modifier = Modifier.fillMaxSize()
-                        .background(Color(0x186a3b)),
+                        .background(Color(0xFF0C3611)),
                     contentColor = Color.Transparent,
                     containerColor = Color.Transparent,
                     bottomBar = {
@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(bottom = 20.dp).padding(horizontal = 40.dp)
-                                .background(Color(0xFFAEB044), shape = RoundedCornerShape(40.dp))
+                                .background(Color(0xFFF0F174), shape = RoundedCornerShape(40.dp))
 
                         ) {
                             Row (

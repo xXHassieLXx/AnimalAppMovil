@@ -33,6 +33,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.example.hassielmonjarazanimalsapp.models.Animals
@@ -131,7 +132,16 @@ fun DetalleAmbientes(
                     modifier = Modifier.padding(horizontal = 10.dp)
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.padding(vertical = 14.dp))
+
+                Text(
+                    text = "Animales del ambiente",
+                    color = Color(0xFFE8EA88),
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Center,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.fillMaxWidth()
+                )
 
                 if (animalsEnvironment.isNotEmpty()) {
                     animalsEnvironment.forEach { animal ->
@@ -141,7 +151,7 @@ fun DetalleAmbientes(
                             Log.i("AnimalEspecifico", animal.toString())
                             navController.navigate("animal-list/${animal.id}")
                         }
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(modifier = Modifier.height(10.dp).padding(vertical = 10.dp))
                     }
 
                 } else {
